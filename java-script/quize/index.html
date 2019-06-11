@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>quiz</title>
+</head>
+
+<body>
+    <!-- note: q' is short for 'question'  and  a' is short for 'answer' (you will see: q1a2 meanning: question one answer 2) -->
+    <div class="wrap cont">
+        <div class="jumbotron text-center header">
+            <h1>Welcome To The MOVIES EXPERT QUIZ</h1>
+            <p>Chooze The Correct Answer</p>
+        </div>
+
+        <div class="container ">
+            <div class="row">
+                <div class="col-sm-4  ">
+                    <div class="picture01  pic1"></div>
+                </div>
+                <div class="col-sm-8">
+                    <span class="question01 " id="q1">
+                        <h4>1</h4>
+                        <h2>Where did Harry Potter go to school?</h2>
+                    </span>
+                    <div class="row">
+                        <div class="col-sm-6 cont">
+                            <button type="button"  class="btn btn-primary btn-lg btn-block tall  q1" 
+                                onclick="check(false,'q1a1','q1');" id="q1a1"> Neverland </button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q1"
+                                onclick="check(false,'q1a2','q1'); " id="q1a2">Mordor</button>
+                        </div>
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall  q1" 
+                                onclick="check(true,'q1a3','q1');" id="q1a3"> Hogwarts</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q1" 
+                                onclick="check(false,'q1a4','q1');" id="q1a4">Dreamland</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="between"></div>
+        <div class="container ">
+            <div class="row">
+                <div class="col-sm-4  ">
+                    <div class="picture01 pic2"></div>
+                </div>
+                <div class="col-sm-8">
+                    <span class="question01" id="q2">
+                        <h4>2</h4>
+                        <h2>Who sang the theme song from Titanic?</h2>
+                    </span>
+                    <div class="row">
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q2"
+                                onclick="check(true,'q2a1','q2');" id="q2a1">Celine Dion </button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q2"
+                                onclick="check(false,'q2a2','q2');" id="q2a2">Beyonce</button>
+                        </div>
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q2"
+                                onclick="check(false,'q2a3','q2');" id="q2a3">Madonna</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q2"
+                                onclick="check(false,'q2a4','q2');" id="q2a4">Barbara Steisand</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="between"></div>
+        <div class="container ">
+            <div class="row">
+                <div class="col-sm-4  ">
+                    <div class="picture01 pic3"></div>
+                </div>
+                <div class="col-sm-8">
+                    <span class="question01" id="q3">
+                        <h4>3</h4>
+                        <h2>How do Anna and Elsa know each other in Frozen?</h2>
+                    </span>
+                    <div class="row">
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q3"
+                                onclick="check(false,'q3a1','q3');" id="q3a1"> Neighbors </button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q3"
+                                onclick="check(false,'q3a2','q3');" id="q3a2">Sisters</button>
+                        </div>
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q3"
+                                onclick="check(true,'q3a3','q3');" id='q3a3'>Freinds</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q3"
+                                onclick="check(false,'q3a4','q3');" id="q3a4">Cousins</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="between"></div>
+        <div class="container ">
+            <div class="row">
+                <div class="col-sm-4  ">
+                    <div class="picture01 pic4"></div>
+                </div>
+                <div class="col-sm-8">
+                    <span class="question01" id="q4">
+                        <h4>4</h4>
+                        <h2> What subject does Profesor Snape teach? </h2>
+                    </span>
+                    <div class="row">
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q4" onclick="check(false,'q4a1','q4');" id="q4a1">
+                                Charms </button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q4" onclick="check(false,'q4a2','q4');" id="q4a2">
+                                History of Magic</button>
+                        </div>
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q4"
+                                onclick="check(true,'q4a3','q4');"id="q4a3">Defense Against the Dark Arts</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q4"
+                                onclick="check(false,'q4a4','q4');" id="q4a4">Potions</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="between"></div>
+        <div class="container ">
+            <div class="row">
+                <div class="col-sm-4  ">
+                    <div class="picture01 pic5"></div>
+                </div>
+                <div class="col-sm-8">
+                    <span class="question01" id="q5">
+                        <h4>5</h4>
+                        <h2>Who directed Inception?</h2>
+                    </span>
+                    <div class="row">
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q5"
+                                onclick="check(false,'q5a1','q5');" id="q5a1">Paul Thomas Anderson </button>
+
+
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q5" onclick="check(false,'q5a2','q5');" id="q5a2">
+                                Martin Scorsese</button>
+                        </div>
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q5"
+                                onclick="check(false,'q5a3','q5');" id='q5a3'>Quentin Tarantino</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q5"
+                                onclick="check(true,'q5a4','q5');" id='q5a4'>Christopher Nolan</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="between"></div>
+        <div class="container ">
+            <div class="row">
+                <div class="col-sm-4  ">
+                    <div class="picture01 pic6"></div>
+                </div>
+                <div class="col-sm-8">
+                    <span class="question01" id="q6">
+                        <h4>6</h4>
+                        <h2>Who directed Avatar?</h2>
+                    </span>
+                    <div class="row">
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q6"
+                                onclick="check(false,'q6a1','q6');" id='q6a1'>Steven Spielberg
+                            </button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q6"
+                                onclick="check(true,'q6a2','q6');" id="q6a2">James Cameron</button>
+                        </div>
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q6"
+                                onclick="check(false,'q6a3','q6');" id='q6a3'>Francis Ford Coppola</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q6"
+                                onclick="check(false,'q6a4','q6');" id='q6a4'>George Lucas</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="between"></div>
+        <div class="container ">
+            <div class="row">
+                <div class="col-sm-4  ">
+                    <div class="picture01 pic7"></div>
+                </div>
+                <div class="col-sm-8">
+                    <span class="question01" id="q7">
+                        <h4>7</h4>
+                        <h2>Who is Simba's uncle? </h2>
+                    </span>
+                    <div class="row">
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q7" onclick="check(true,'q7a1','q7');" id="q7a1">
+                                Scar </button>
+
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q7" onclick="check(false,'q7a2','q7');" id="q7a2">
+                                Amos</button>
+                        </div>
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q7"
+                                onclick="check(false,'q7a3','q7');" id='q7a3'>Zazou</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q7"
+                                onclick="check(false,'q7a4','q7');" id="q7a4">Slade</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="between"></div>
+        <div class="container ">
+            <div class="row">
+                <div class="col-sm-4  ">
+                    <div class="picture01 pic8"></div>
+                </div>
+                <div class="col-sm-8">
+                    <span class="question01" id="q8">
+                        <h4>8</h4>
+                        <h2>Which of these is NOT a real Lord Of The Rings Movie?</h2>
+                    </span>
+                    <div class="row">
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q8"
+                                onclick="check(false,'q8a1','q8');" id='q8a1'>The Fellowship of the Ring </button>
+
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q8"
+                                onclick="check(false , 'q8a2','q8');" id='q8a2'>The Two Towers</button>
+                        </div>
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q8"
+                                onclick="check(true,'q8a3','q8');" id="q8a3">The End of the One Ring</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q8"
+                                onclick="check(false,'q8a4','q8');" id="q8a4">The Return of the King</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="between"></div>
+        <div class="container ">
+            <div class="row">
+                <div class="col-sm-4  ">
+                    <div class="picture01 pic9"></div>
+                </div>
+                <div class="col-sm-8">
+                    <span class="question01" id="q9">
+                        <h4>9</h4>
+                        <h2>How many kids did Gru adopt?</h2>
+                    </span>
+                    <div class="row">
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q9" onclick="check(false, 'q9a1','q9');" id="q9a1">
+                                1</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q9"
+                                onclick="check(false,'q9a2','q9');" id='q9a2'>2</button>
+                        </div>
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q9"
+                                onclick="check(true,'q9a3','q9');" id='q9a3'>3</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q9"
+                                onclick="check(false,'q9a4','q9');" id='q9a4'>4</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="between"></div>
+        <div class="container ">
+            <div class="row">
+                <div class="col-sm-4  ">
+                    <div class="picture01 pic10"></div>
+                </div>
+                <div class="col-sm-8">
+                    <span class="question01 q10">
+                        <h4>10</h4>
+                        <h2>How many Hanger Games were there?</h2>
+                    </span>
+                    <div class="row">
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q10"
+                                onclick="check(true,'q10a1','q10');" id='q10a1'>2</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q10"
+                                onclick="check(false,'q10a2','q10');" id='q10a2'>4</button>
+                        </div>
+                        <div class="col-sm-6 cont">
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q10"
+                                onclick="check(false,'q10a3','q10');" id="q10a3">6 </button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block tall q10"
+                                onclick="check(false,'q10a4','q10');" id="q10a4">8</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="between"></div>
+        <div class="footer">
+            <button type="button" class="btn btn-default btn-lg btn-block" id="result" onclick="getMyResult();">My
+                Result</button>
+                <button type="button" class="btn btn-default btn-lg btn-block" id="new-game" onclick="playAgain();">
+                        play again</button>
+            <div class="end"></div>
+        </div>
+
+
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+
+</html>

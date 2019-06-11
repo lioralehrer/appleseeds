@@ -1,0 +1,85 @@
+body{
+    background-color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+.header{
+    background-image: url('../images/header.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+.picture01{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 350px;
+    margin-top:110px;
+    margin-bottom: 50px;
+}
+.pic1{
+    background-image: url('../images/harry.jpg');
+}
+.pic2{
+    background-image: url('../images/titanic.jpg');
+}
+.pic3{
+    background-image: url('../images/frozen.jpeg');
+}
+.pic4{
+    background-image: url('../images/snape.jpg');
+}
+.pic5{
+    background-image: url('../images/Inception.jpg');
+}
+.pic6{
+    background-image: url('../images/Avatar.jpg');
+}
+.pic7{
+    background-image: url('../images/scar.jpg');
+    background-size: contain;
+}
+.pic8{
+    background-image: url('../images/lord-of-the-rings.jpg');
+}
+.pic9{
+    background-image: url('../images/gru.jpg');
+    
+}
+.pic10{
+    background-image: url('../images/games.jpg');
+}
+.question01{
+    color:white;
+    font-style: italic;
+    text-align: center;
+}
+.cont{
+  
+    height: 300px;
+   
+}
+.tall{
+    height: 50%;
+    margin:20px;
+}
+.between{
+    height: 100px;
+}
+#result{
+    height: 100px;
+    margin: 20px;
+    padding: 20px;
+    color:red;
+    font-size: 200%;
+    
+}
+#new-game{
+    height: 50px;
+    margin:20px;
+    padding:10px;
+    color:black;
+
+}
+.end{
+    height: 100px;;
+}
+
