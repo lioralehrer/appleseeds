@@ -9,31 +9,27 @@ let circle = new Shape("circle", "pink");
 let squere = new Shape("squere", "green");
 circle.radius = 3;
 squere.edgeLength = 5;
-squere.calcArea = function(edgeLength){
-    let area = edgeLength*4;
-    console.log(area);
+squere.calcArea = function (edgeLength) {
+    let area = edgeLength * 4;
     return area;
 };
 squere.calcArea2 = function () {
-   let area = this.edgeLength * 4;
-   console.log(area);
+    let area = this.edgeLength * 4;
     return area;
 }
-circle.calcArea = function(radius){
-    let area = radius*radius*Math.PI;
-    console.log(area);
+circle.calcArea = function (radius) {
+    let area = radius * radius * Math.PI;
     return area;
 }
 circle.calcArea2 = function () {
-    let area =  Math.PI * this.radius * this.radius;
-    console.log(area);
+    let area = Math.PI * this.radius * this.radius;
     return area
 }
-function calcShapeArea(shape){
-    if (shape.type === "circle"){
+function calcShapeArea(shape) {
+    if (shape.type === "circle") {
         circle.calcArea(circle.radius);
     }
-    if (shape.type === "squere"){
+    if (shape.type === "squere") {
         squere.calcArea(squere.edgeLength);
     }
 }
