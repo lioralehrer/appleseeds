@@ -19,10 +19,18 @@ function logTitleAndAuthor(book){
 //Write a function that logs all the books that have not been read yet, and call it.
 let books =[alice,paul,makeIt,hobit];
 function logWhoWasntRead(books){
+    var arrBook = [];
+    counter =0;
     books.forEach(book => {
         if (!book.beenRead){
             console.log(book);
+            arrBook[counter]= book;
+            counter++;
         }
+        
     });
+    return arrBook;
 }
 logWhoWasntRead(books);
+
+
