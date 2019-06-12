@@ -1,7 +1,4 @@
-$("div").mouseover( function(){
-    $(this).addClass("some-container");
+$("div").mouseover(function () {
+    $("div").toggleClass("blue-bg");
 });
 
-$("div").mouseup(function(){
-    $(this).removeClass("some-container");
-}); 
