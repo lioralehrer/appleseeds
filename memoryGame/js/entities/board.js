@@ -1,7 +1,7 @@
 
 class Board {
     constructor(height, width) {
-        this.cards = createBoardOfCards(height, width);
+        this.cards =this.createBoardOfCards(height, width);
     }
     createBoardOfCards(height, width) {
         let cards = [];
