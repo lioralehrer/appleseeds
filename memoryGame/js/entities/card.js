@@ -1,21 +1,23 @@
-let p1 = '../images/anemone.jpg';
-let p2 = '../images/barbary.jpg';
-let p3 = '../images/chamomile.jpg';
-let p4 = '../images/crocus.jpg';
-let p5 = '../images/orchid.jpg';
-let p6 = '../images/salvia.jpg';
-var arrayOfPicturs = [p1, p1, p2, p2, p3, p3, p4, p4, p5, p5, p6, p6];
+const P1 = '../images/anemone.jpg';
+const P2 = '../images/barbary.jpg';
+const P3 = '../images/chamomile.jpg';
+const P4 = '../images/crocus.jpg';
+const P5 = '../images/orchid.jpg';
+const P6 = '../images/salvia.jpg';
+var arrayOfPicturs = [P1, P1, P2, P2, P3, P3, P4, P4, P5, P5, P6, P6];
 class Card {
 
     constructor() {
-         this.front = this.pickfrontImg();
-
-
+        this.position = "back";
+        this.front = this.pickfrontImg();
     }
     pickfrontImg() {
+        
         let index = Math.floor(Math.random() * arrayOfPicturs.length);
         let picked = arrayOfPicturs[index];
         delete arrayOfPicturs[index];
+        arrayOfPicturs[index] = arrayOfPicturs.pop();
+        
         return picked;
     }
 }
