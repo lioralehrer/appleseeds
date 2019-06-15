@@ -8,13 +8,11 @@ body{
 .img{
     height: 170px;
     width: 100%;
-    /* visibility: hidden; */
-    /* display:none; */
+  
 }
 
 .card{
     height: 170px;
-    /* background-image: url('../images/thinking-cap.jpg'); */
     background-size: contain;
     padding: 2px;
     margin: 5px;

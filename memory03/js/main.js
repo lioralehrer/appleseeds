@@ -1,11 +1,11 @@
-let game = new Game();
-var cardsArray = game.board.cards;
+// let game = new Game();
+// var cardsArray = game.board.cards;
 
 $('.card').each(function () {
     var img = this;
     img.addEventListener('click', showPicture);
-
 });
+
 let counter = 0;
 function showPicture(e) {
     if (counter < 2) {

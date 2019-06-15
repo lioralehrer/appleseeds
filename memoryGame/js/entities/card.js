@@ -12,11 +12,12 @@ class Card {
         this.front = this.pickfrontImg();
     }
     pickfrontImg() {
-
-        let index = Math.floor(Math.random() * arrayOfPicturs.length);
-        let picked = arrayOfPicturs[index];
-        delete arrayOfPicturs[index];
-        arrayOfPicturs[index] = arrayOfPicturs.pop();
+        let picked;
+        while (picked === undefined) {
+            let index = Math.floor(Math.random() * arrayOfPicturs.length);
+            picked = arrayOfPicturs[index];
+            delete arrayOfPicturs[index];
+        }
         return picked;
     }
 }

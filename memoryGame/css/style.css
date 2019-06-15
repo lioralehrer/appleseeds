@@ -1,6 +1,11 @@
 body{
     background-color: rgb(10, 56, 10);
 }
+img{
+    height: 170px;
+    width: 100%;
+
+}
 .header h1{
     color:white;
     text-align: center;
@@ -8,8 +13,6 @@ body{
 
 .card{
     height: 170px;
-    /* background-image: url('../images/thinking-cap.jpg'); */
-    background-size: cover;
     padding: 2px;
     margin: 5px;
     background-color: wheat;
