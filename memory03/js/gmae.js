@@ -1,5 +1,7 @@
-class Card{
+const HEIGHT = 3;
+const WIDTH = 4;
+class Game{
     constructor(){
-        this.position = back;
+         this.board =  new Board(HEIGHT, WIDTH);
     }
 }
