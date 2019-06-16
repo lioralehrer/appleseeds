@@ -1,4 +1,5 @@
 let game = new Game();
+var play = true;
 var cardsArray = game.board.cards;
 $(document).ready(() => {
     let counter = 1;
@@ -9,11 +10,11 @@ $(document).ready(() => {
             counter++;
         }
     }
-    $(".playAgain").click(function(){
+    $(".playAgain").click(function () {
         location.reload();
     });
 
-    
+
     $('.card').each(function () {
         var img = this;
         img.addEventListener('click', showPicture);
@@ -43,7 +44,7 @@ $(document).ready(() => {
     function checkmatching() {
         if (matchingArr[0] === matchingArr[1]) {
             matchCounter++;
-            $(`img[src*="${matchingArr[0]}"]`).parent().fadeTo("slow", 0);
+            $(`img[src*="${matchingArr[0]}"]`).parent().stop(true, true).fadeTo("slow", 0);
             $(`img[src*="${matchingArr[0]}"]`).parent().promise().done(function () { sayWin() });
 
         }
@@ -53,13 +54,14 @@ $(document).ready(() => {
         matchingArr.pop();
         matchingArr.pop();
 
+
     }
 
     $("img").hide();
     function sayWin() {
         if (matchCounter === 6) {
             $(".playAgain").show();
-            // $("modal-wrapper").css("display","");
+
         }
     }
 })
