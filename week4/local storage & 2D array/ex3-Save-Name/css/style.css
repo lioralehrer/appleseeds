@@ -1,0 +1,22 @@
+body{
+    margin: 50px;
+    padding :10px;
+    background-color: rgb(71, 17, 122);
+    border: 5px,solid, black;
+    position: relative;
+}
+.place{
+    margin: 50px;
+    padding: 10px;
+    position: relative;
+    align-content: center;
+     
+}
+label{
+    color: white;
+}
+.sayHello{
+    color: white;
+    background-image: url("../image/giphy.gif");
+    height: 300px;
+}

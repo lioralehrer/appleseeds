@@ -25,7 +25,6 @@ $(document).ready(() => {
             let target = e.target;
             let id = target.getAttribute("id");
             let place = $(`#${id} img`).attr("src");
-            // let place = target.getAttribute("place");
             $(`#${id} img`).show();
             keepThisPlace(place);
             count++
@@ -60,6 +59,7 @@ $(document).ready(() => {
     function sayWin() {
         if (matchCounter === 6) {
             $(".playAgain").show();
+            // $("modal-wrapper").css("display","");
         }
     }
 })
