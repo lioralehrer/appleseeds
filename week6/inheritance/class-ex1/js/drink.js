@@ -5,7 +5,7 @@ class Drink {
     }
 }
 
-class Coffie extends Drink {
+class Coffee extends Drink {
     constructor(title, shots, withmilk) {
         super(title, true);
         this.shots = shots;
@@ -20,8 +20,8 @@ class Coffie extends Drink {
     }
 }
 let cola = new Drink("cola",false);
-let espresso = new Coffie("espresso", 2,false);
-let capuchino = new Coffie("capuchino",1,true);
+let espresso = new Coffee("espresso", 2,false);
+let capuchino = new Coffee("capuchino",1,true);
 espresso.printeInstructions();
 capuchino.printeInstructions();
 
