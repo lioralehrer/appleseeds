@@ -13,19 +13,14 @@ class Programmer extends Student {
     }
     isProgramingIn(language) {
         return this.languages.indexOf(language) !== -1;
-        // for (let i = 0; i < this.languages.length; i++) {
-        //     if (this.languages[i] === language) {
-        //         console.log('hello');
-        //     }
-        // }
     }
 }
 function checkKnowsJavascript(arrayOfStudents) {
-    for (let i=0; i<arrayOfStudents.length;i++){
-        if (arrayOfStudents[i] instanceof Programmer ){
-            if (arrayOfStudents[i].isProgramingIn("javascript")){
+    for (let i = 0; i < arrayOfStudents.length; i++) {
+        if (arrayOfStudents[i] instanceof Programmer) {
+            if (arrayOfStudents[i].isProgramingIn("javascript")) {
                 console.log(arrayOfStudents[i]);
-                 return arrayOfStudents[i];
+                return arrayOfStudents[i];
             }
         }
     }
