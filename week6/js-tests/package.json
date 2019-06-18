@@ -1,0 +1,15 @@
+{
+  "name": "js-tests",
+  "version": "1.0.0",
+  "description": "exersie\u001b[D\u001b[D\u001b[D\u001b[C\u001bcercise with testing js function with node",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "author": "liora",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
+}
