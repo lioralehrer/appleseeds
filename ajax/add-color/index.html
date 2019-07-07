@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <style>
+        .box{
+            display: inline-block;
+            height: 170px;
+            width: 170px;
+            border:1px solid black;
+            margin: 10px;
+        }
+        button{
+            margin: 10px;
+        }
+    </style>
+    <title>add-color</title>
+</head>
+<body>
+        <h2>Add a color</h2>
+        <input type="text" name="color" id="color" /><br/>
+        <button class="add-color">Add Color to server</button><br/>
+        <button class="get-colors">Get colors list from server</button><br/>
+        <div class="box"></div>
+        <div class="colors-name"></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="js/logic.js"></script>
+</body>
+</html>
