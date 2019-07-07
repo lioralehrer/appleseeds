@@ -1,0 +1,8 @@
+input{
+    border :3px solid blue;
+    margin :20px;
+    padding :20px;
+}
+input.activity-input{
+    background-color: lightblue;
+}
