@@ -16,3 +16,15 @@ def verbing(s):
     print(s)
     return s
 verbing("lalaing")
+
+# E. not_bad
+# Given a string, find the first appearance of the
+# substring 'not' and 'bad'. If the 'bad' follows
+# the 'not', replace the whole 'not'...'bad' substring
+# with 'good'.
+# Return the resulting string.
+# So 'This dinner is not that bad!' yields:
+# This dinner is good!
+def not_bad(s):
+  # +++your code here+++
+  return
