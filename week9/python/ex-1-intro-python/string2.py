@@ -9,15 +9,14 @@
 
 def verbing(s):
     if (len(s) >= 3):
-        if (s[-3:-1] == "ing"):
+        if (s[-3:] == "ing"):
             s += "ly"
         else:
             s += "ing"
     print(s)
     return s
-
-
-verbing("lalaing")
+verbing("lalalal")
+verbing("laling")
 
 # E. not_bad
 # Given a string, find the first appearance of the
@@ -30,35 +29,44 @@ verbing("lalaing")
 
 
 def not_bad(s):
-    # +++your code here+++
-    return
+    s = s.split()
+    for x in range(len(s)):
+        if s[x]=="not" and s[x+1]=="bad":
+           s.remove(s[x])
+           s[x]="good"
+           print (s)
+           break 
 
+not_bad("you are not bad here")
 
 # staff for me
-matrix = [(6, 5, 4), (2, 4)]
-for i in range(len(matrix)):
-    for j in range(len(matrix[i])):
-        print(matrix[i][j])
-print(matrix)
+# matrix = [(6, 5, 4), (2, 4)]
+# for i in range(len(matrix)):
+#     for j in range(len(matrix[i])):
+#         print(matrix[i][j])
+# print(matrix)
 
-lala = {"l": "lala", "a": "haha"}
-lala["b"] = "bebe"
-print(lala)
-if False and not True:
-    print("liora")
-a = "print the string"
-for i in range(len(a)):
-    print(a[i]+",")
-b = ["print", "the", "string"]
-for w in range(len(b)):
-    print(b[w]+",")
-else:
-    print("empty")
+# lala = {"l": "lala", "a": "haha"}
+# lala["b"] = "bebe"
+# print(lala)
+# if False and not True:
+#     print("liora")
+# a = "print the string"
+# for i in range(len(a)):
+#     print(a[i]+",")
+# b = ["print", "the", "string"]
+# for w in range(len(b)):
+#     print(b[w]+",")
+# else:
+#     print("empty")
 
 
-def fibon(n):
-    a, b = 1, 1
-    while a<n:
-        a,b = b,a+b
-        print(b)
-fibon(10)        
+# def fibon(n):
+#     a, b = 1, 1
+#     while a<n:
+#         a,b = b,a+b
+#         print(b)
+# fibon(10) 
+
+# my_list = [num**2 for num in range(1,12)]
+# print(my_list)       
