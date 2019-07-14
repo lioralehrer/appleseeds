@@ -1,0 +1,29 @@
+ways to import files/liboraries:
+file is a module
+relative path: . -another file inside the folder
+                .. -from another folder
+1) import modiule =
+    import math
+2) from module import function = 
+    from math import random
+3) change name of func':  from module  import function as my-name
+4) change name of module':  import module   as my-name
+    and than call to func: my-name.func()
+5) import all in module: from module  import * (=all)
+
+venv:
+create venv (to install liboraries to our project only):
+python -m venv venv
+
+to work in our venv (get into activate:)
+. venv/Scripts/activate
+ install watever:
+pip install name-U-want
+
+create requirment.txt (to know your dependesies and vergens):
+pip freeze > requirements.txt
+
+out from active venv:
+deactivate
+
+

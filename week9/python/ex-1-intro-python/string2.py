@@ -15,6 +15,8 @@ def verbing(s):
             s += "ing"
     print(s)
     return s
+
+
 verbing("lalaing")
 
 # E. not_bad
@@ -25,6 +27,38 @@ verbing("lalaing")
 # Return the resulting string.
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
+
+
 def not_bad(s):
-  # +++your code here+++
-  return
+    # +++your code here+++
+    return
+
+
+# staff for me
+matrix = [(6, 5, 4), (2, 4)]
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+        print(matrix[i][j])
+print(matrix)
+
+lala = {"l": "lala", "a": "haha"}
+lala["b"] = "bebe"
+print(lala)
+if False and not True:
+    print("liora")
+a = "print the string"
+for i in range(len(a)):
+    print(a[i]+",")
+b = ["print", "the", "string"]
+for w in range(len(b)):
+    print(b[w]+",")
+else:
+    print("empty")
+
+
+def fibon(n):
+    a, b = 1, 1
+    while a<n:
+        a,b = b,a+b
+        print(b)
+fibon(10)        
