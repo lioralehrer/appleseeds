@@ -15,6 +15,8 @@ def verbing(s):
             s += "ing"
     print(s)
     return s
+
+
 verbing("lalalal")
 verbing("laling")
 
@@ -31,13 +33,56 @@ verbing("laling")
 def not_bad(s):
     s = s.split()
     for x in range(len(s)):
-        if s[x]=="not" and s[x+1]=="bad":
-           s.remove(s[x])
-           s[x]="good"
-           print (s)
-           break 
+        if s[x] == "not" and s[x+1] == "bad":
+            s.remove(s[x])
+            s[x] = "good"
+            print(s)
+            break
+
 
 not_bad("you are not bad here")
+
+#  Consider dividing a string into two halves.
+# If the length is even, the front and back halves are the same length.
+# If the length is odd, we'll say that the extra char goes in the front half.
+# e.g. 'abcde', the front half is 'abc', the back half 'de'.
+# Given 2 strings, a and b, return a string of the form
+#  a-front + b-front + a-back + b-back
+
+
+def front_back(a, b):
+    length_a = len(a)//2
+    length_b = len(b)//2
+    if (length_a*2 != len(a)):
+        front_a = a[0:length_a+1]
+        back_a = a[length_a+1:]
+    else:
+        front_a = a[0:length_a]
+        back_a = a[length_a:]
+    if (length_b*2 != len(b)):
+        front_b = b[0:length_b+1]
+        back_b = b[length_b+1]
+    else:
+        front_b = b[0:length_b]
+        back_b = b[length_b:]
+    return front_a+front_b+back_a+back_b
+
+
+a = "once apun a time there was a boy named Jack"
+b = "Sigh no more, ladies, sigh no more"
+print(front_back(a, b))
+
+# Simple provided test() function used in main() to print
+# what each function returns vs. what it's supposed to return.
+
+
+def test(got, expected):
+    if got == expected:
+        prefix = ' OK '
+    else:
+        prefix = '  X '
+    print('%s got: %s expected: %s' % (prefix, repr(got), repr(expected)))
+
 
 # staff for me
 # matrix = [(6, 5, 4), (2, 4)]
@@ -66,7 +111,7 @@ not_bad("you are not bad here")
 #     while a<n:
 #         a,b = b,a+b
 #         print(b)
-# fibon(10) 
+# fibon(10)
 
 # my_list = [num**2 for num in range(1,12)]
-# print(my_list)       
+# print(my_list)
