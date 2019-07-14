@@ -1,5 +1,5 @@
-from .q import get_q
-import s.get_s
+from ..q import get_q
+from .s import get_s
 
 
 def get_letters():
