@@ -5,8 +5,8 @@ from bottle import route, run,static_file
 def hello():
     return 'Hello world'
 
-@route('/')
+@route('/index')
 def index():
     return static_file("index.html",root="")
-    
-run(host='localhost', port=7000, debug=True, reloader=True)
+
+# run(host='localhost', port=7000, debug=True, reloader=True)

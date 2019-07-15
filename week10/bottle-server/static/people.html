@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>people</title>
+</head>
+
+<body>
+    <h2>People List:</h2>
+    <div id="peopleList"></div>
+    <script>
+        function start(){
+            $.ajax({
+            type: "GET",
+            url: "/people",
+        }).done(function (data) {
+            $("#peopleList").append($("<ul/>"));
+            var people = JSON.parse(data);
+            people.forEach(element => {
+                var person = element.name + ", age: " + element.age + ", city: " + element.city;
+                $("#peopleList ul").append($("<li/>").html(person));
+
+            });
+        })
+        }
+        start();
+   
+    </script>
+    <!-- <script src="people.js"></script> -->
+</body>
+
+</html>
