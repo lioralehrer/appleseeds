@@ -1,0 +1,17 @@
+
+.hello{
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    margin:10px;
+    background-image: url("https://media.giphy.com/media/26xBwdIuRJiAIqHwA/giphy.gif");
+    background-size: contain
+}
+.haha{
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    margin:10px;
+    background-image: url("https://media.giphy.com/media/Mjl0BsAgMGYTe/giphy.gif");
+    background-size: cover
+}
