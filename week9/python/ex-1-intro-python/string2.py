@@ -72,18 +72,6 @@ a = "once apun a time there was a boy named Jack"
 b = "Sigh no more, ladies, sigh no more"
 print(front_back(a, b))
 
-# Simple provided test() function used in main() to print
-# what each function returns vs. what it's supposed to return.
-
-
-def test(got, expected):
-    if got == expected:
-        prefix = ' OK '
-    else:
-        prefix = '  X '
-    print('%s got: %s expected: %s' % (prefix, repr(got), repr(expected)))
-
-
 # staff for me
 # matrix = [(6, 5, 4), (2, 4)]
 # for i in range(len(matrix)):
@@ -115,3 +103,5 @@ def test(got, expected):
 
 # my_list = [num**2 for num in range(1,12)]
 # print(my_list)
+
+        

@@ -3,3 +3,6 @@ def power(x ,n):
         return 1
     return power(x,n-1)*x
 print (power(4,2))
+
+
+

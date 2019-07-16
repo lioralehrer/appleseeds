@@ -10,6 +10,8 @@ def sum_num0(nums,i):
     return  nums[i]+sum_num0(nums,i+1) 
 print (sum_num0([1,2,3,4,5,6],0))
 
+
+  
 assert(sum([1, 2, 3, 4, 5], 0) == 15)
 assert(sum([], 0) == 0)
 assert(sum([11], 0) == 11)
