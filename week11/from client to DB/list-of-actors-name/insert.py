@@ -15,8 +15,9 @@ try:
         sql="select full_name from actors"
         cursor.execute(sql)
         result=cursor.fetchall()
+        current_actors=[x['full_name'] for x in result]
         for actor in my_actors:
-            if  actor not in result:
+            if  actor['full_name'] not in current_actors:
                 t=actor['id'],actor['full_name'],actor['gender']
                 sql= "insert into actors values(%s,%s,%s)"  
                 cursor.execute(sql,t)
