@@ -6,7 +6,7 @@ user='root', password="liora",db='imdb',charset='utf8mb4',cursorclass=pymysql.cu
 
 try:
     with connection.cursor()as cursor:
-        sql=f"select full_name from actors "
+        sql="select full_name from actors "
         cursor.execute(sql)
         result= cursor.fetchall()
         for row in result:
