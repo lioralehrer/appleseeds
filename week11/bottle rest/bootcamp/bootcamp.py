@@ -10,39 +10,46 @@ connection = pymysql.connect(user='root', password='liora', db='bootcamp',
 
 @get('/students')
 def get_all():
-    with connection.cursor() as cursor:
+    try:
+         with connection.cursor() as cursor:
         query = 'select * from students'
         cursor.execute(query)
         return json.dumps(cursor.fetchall())
+    except pymysql.connector.Error as error:print("Failed get students from database: {}".format(error))    
+
+       
 
 
 @post('/students')
 def add_student():
-    firstName = request.json.get("firstName")
-    lastName = request.json.get("lastName")
+    first_name = request.json.get("firstName")
+    last_name = request.json.get("lastName")
     been_dismissed = request.json.get("been_dismissed")
     kohort = request.json.get("kohort")
     try:
         with connection.cursor() as cursor:
             query = "insert into students values %s, %s,%s,%s,%s"
-            cursor.execute(query, (firstName, lastName, been_dismissed, kohort))
+            cursor.execute(query, (first_name, last_name, been_dismissed, kohort))
             connection.commit()
-    except: Exception    
+    except pymysql.connector.Error as error:print("Failed to add student into database: {}".format(error))    
 
 
-@get('/students/<studentId>')
-def get_student(studentId):
-    with connection.cursor() as cursor:
-        query = "select * from students where studentId={}".format(studentId)
-        cursor.execute(query)
-        return json.dumps(cursor.fetchone())
-@get('/students/<firstName>')
-def get_student_by_name(firstName):
-    with connection.cursor() as cursor:
-        query = f"select * from students where firstName='{firstName}'"
-        cursor.execute(query)
-        return json.dumps(cursor.fetchall())        
-        
+@get('/students/id/<student_id>')
+def get_student(student_id):
+    try:    
+        with connection.cursor() as cursor:
+                query = "select * from students where studentId={}".format(student_id)
+                cursor.execute(query)
+                return json.dumps(cursor.fetchone())
+    except pymysql.connector.Error as error:print("Failed to get student from database: {}".format(error))            
+@get('/students/first_name<firstName>')
+def get_student_by_name(first_name):
+    try:    
+        with connection.cursor() as cursor:
+                query = f"select * from students where firstName='{first_name}'"
+                cursor.execute(query)
+                return json.dumps(cursor.fetchall())        
+    except pymysql.connector.Error as error:print("Failed to get student from database: {}".format(error))    
 @delete('students/<id>')
 def remove(id):
     try:
@@ -50,13 +57,13 @@ def remove(id):
             query = """Delete from students where id = %s"""
             cursor.execute(query,(id))
             print("\n Record Deleted successfully ")
-    except mysql.connector.Error as error:print("Failed to Delete record to database: {}".format(error))
+    except pymysql.connector.Error as error:print("Failed to Delete record to database: {}".format(error))
    
    
-@put('students/<id>/<new_data>')
-def update(id,new_data):
-    firstName = request.json.get("firstName")
-    lastName = request.json.get("lastName")
+@put('students/')
+def update():
+    first_name = request.json.get("firstName")
+    last_name = request.json.get("lastName")
     been_dismissed = request.json.get("been_dismissed")
     kohort = request.json.get("kohort")
     try:
@@ -64,10 +71,10 @@ def update(id,new_data):
         query = "select * from students where studentId={}".format(studentId)
         cursor.execute(query)
         old_name= json.dumps(cursor.fetchone())
-        query = f"UPDATE students SET firstName={firstName},lastName={lastName},been_dismissed={been_dismissed},kohort={kohort} WHERE studentId ={id}"
-        cursor.execute(query, (firstName, lastName, been_dismissed, kohort))
+        query = "UPDATE students SET firstName= %s,lastName=%s,been_dismissed=%s,kohort=%s WHERE studentId = %s"
+        cursor.execute(query,(first_name, last_name, been_dismissed, kohort,id))
         connection.commit()
-    except: Exception
+    except pymysql.connector.Error as error:print("Failed to update student  to database: {}".format(error))
 
     
 
