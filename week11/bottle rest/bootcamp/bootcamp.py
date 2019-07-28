@@ -36,6 +36,7 @@ def add_student():
 
 @get('/students/id/<student_id>')
 def get_student(student_id):
+        
     try:    
         with connection.cursor() as cursor:
                 query = "select * from students where studentId={}".format(student_id)
