@@ -1,7 +1,41 @@
-<!-- templates/registration/login.html -->
-<h2>Login</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Login</button>
-</form>
+<head>
+  <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/socialBoard/css/login.css">
+  <meta charset="UTF-8">
+  <title>Biko's Billboard</title>
+  <link href="https://use.fontawesome.com/082397c0ed.css" media="all" rel="stylesheet">
+</head>
+<body data-gr-c-s-loaded="true">
+  <div class="login-page">
+    <div class="form">
+      <h2>Billboard Login</h2>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="row">
+          <span class="text-danger small"> </span>
+        </div>
+        <div class="row">
+          <span class="text-danger small"> </span>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <div class="social-logos">
+          <a href="/oauth/login/facebook/"><img src="/static/socialBoard/images/facebook.png" title="Facebook"
+              alt="Facebook"></a><br>
+          <a href="/oauth/login/github/"><img src="/static/socialBoard/images/github.png" title="GitHub"
+              alt="GitHub"></a><br>
+          <a href="/oauth/login/twitter/"><img src="/static/socialBoard/images/twitter.png" title="Twitter"
+              alt="Twitter"></a><br>
+        </div>
+        <p class="message">Not registered? <a href="/static/socialBoard/templates/registration/register">Create an
+            account</a></p>
+      </form>
+    </div>
+  </div>
+
+
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/static/js/082397c0ed.js"></script>
+  <script src="/static/js/javascript.js"></script>
+</body>
