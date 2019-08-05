@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from . models import Post
 from django.http import HttpResponse
 import datetime
-from django.contrib.auth import authenticate, login , logout
+from django.contrib.auth import authenticate, login as auth_login , logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
@@ -24,7 +24,7 @@ def login(request):
     user = authenticate(username=username, password=password)
     if user is not None:
         if user.is_active:
-            login(request,user)
+            auth_login(request,user)
             return redirect(request, 'socialBoard.html')
         else:
             pass
@@ -32,15 +32,18 @@ def login(request):
         pass
 
 def register(request):
-    if request.method == "POST":
+    print("in register")
+    if request is not None:
+    # if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             username=form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password')
-            user = authenticate(username=username,password=raw_password)
-            login(request,new_user)
-            return HttpResponseRedirect(reverse("socialBoard"))
+            user = authenticate(username=username, password=raw_password)
+            auth_login(request,user)
+            return redirect(request, 'socialBoard.html')
+            # return HttpResponseRedirect(reverse("socialBoard"))
         else:
             form = UserCreationForm()
             return render(request,
