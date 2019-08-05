@@ -1,26 +1,42 @@
-
 {%  load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link  rel="stylesheet" href="{% static 'socialBoard/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'socialBoard/css/style.css' %}">
     <title>Social Board</title>
 </head>
+
 <body>
-    <h1>Welcome to the Social Board!</h1>
-    {% if posts %}
-    <ul>
-        {% for p in posts %}
-        <li>{{p}}</li>
-    </ul>
-    {% endfor %}
-    {% else %}
-    <p>There are no posts yet...</p>
-    {% endif%}
+    <div class="container">
+        <p class="head">BILLBOARD</p>
+        {% if posts %}
+        <ul>
+            {% for p in posts %}
+            <li>
+                <div id="post">
+                    <div id="post-title">{{p.title}}
+                        <p id="post-content">{{p.content}}</p>
+                        <p id="post-author">{{p.author}}</p>
+                    </div>
+                   
+                </div>
+
+            </li>
+        </ul>
+        {% endfor %}
+        <div id="add-post"><button id="btn-add-post">
+                <a href="{% url 'new_post' %}">+</a></button></div>
+        {% else %}
+        <p>There are no posts yet...</p>
+        {% endif%}
+    </div>
+
 
     <script src="{% static 'socialBoard/js/socialBoard.js' %}"></script>
 </body>
+
 </html>
