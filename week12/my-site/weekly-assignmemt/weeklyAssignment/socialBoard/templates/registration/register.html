@@ -1,42 +1,29 @@
-<head>
-    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/static/socialBoard/css/login.css">
-    <meta charset="UTF-8">
-    <title>Biko's Billboard</title>
-    <link href="https://use.fontawesome.com/082397c0ed.css" media="all" rel="stylesheet">
-</head>
 
-<body data-gr-c-s-loaded="true">
-    <div class="login-page">
-        <div class="form">
-            <h2>Sign up</h2>
-            <form method="post">
-                {% csrf_token %}
-                {% for field in form %}
-                <p>
-                    {{ field.label_tag }}<br>
-                    {{ field }}
-                    {% for error in field.errors %}
-                    <p style="color: red">{{ error }}</p>
-                    {% endfor %}
-                </p>
-                {% endfor %}
-                <div class="row">
-                    <span class="text-danger small"> </span>
-                </div>
-                <div class="row">
-                    <span class="text-danger small"> </span>
-                </div>
-                <button type="submit" class="btn btn-success">Sign up</button>
-                <div class="social-logos">
-                    <a href="/oauth/login/facebook/"><img src="/static/socialBoard/images/facebook.png" title="Facebook"
-                            alt="Facebook"></a><br>
-                    <a href="/oauth/login/github/"><img src="/static/socialBoard/images/github.png" title="GitHub"
-                            alt="GitHub"></a><br>
-                    <a href="/oauth/login/twitter/"><img src="/static/socialBoard/images/twitter.png" title="Twitter"
-                            alt="Twitter"></a><br>
-                </div>
-            </form>
-        </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+   <link rel="stylesheet" type="text/css" href="{% static 'SocialBoard/css/boostrap/bootstrap.min.css' %}">
+   <link rel="stylesheet" type="text/css" href="{% static 'SocialBoard/css/comon.css' %}">
+   <link rel="stylesheet" type="text/css" href="{% static 'SocialBoard/css/login.css' %}">
+   <meta charset="UTF-8">
+   <title>Biko's Billboard</title>
+</head>
+<body>
+<div class="login-page">
+   <div class="form">
+       <h2>Billboard</h2>
+       <br>
+       <form action="{% url 'register' %}" method="post">
+           {% csrf_token %}
+           {{ form.as_p}}
+           <p class="error-msg" style="color:red;"></p>
+            <button id="btn-submit" type="submit" class="btn btn-success">CREATE</button>
+           <p class="message">Already registered?<a href="/">Sign In</a></p>
+       </form>
+   </div>
+</div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="{% static 'SocialBoard/js/register.js' %} "></script>
+</html>

@@ -2,13 +2,14 @@ from django.shortcuts import render, redirect
 from . models import Post
 from django.http import HttpResponse
 import datetime
-from django.contrib.auth import authenticate, login as auth_login , logout
+from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 def index(request):
     context = {"posts": get_posts()}
-    return render(request,'socialBoard/index.html',context)
+    return render(request,'socialBoard',context)
 
 def get_posts():
     return Post.objects.all()
@@ -31,24 +32,22 @@ def login(request):
     else:        
         pass
 
+
 def register(request):
     print("in register")
-    if request is not None:
-    # if request.method == "POST":
+    if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
-            username=form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=raw_password)
-            auth_login(request,user)
-            return redirect(request, 'socialBoard.html')
-            # return HttpResponseRedirect(reverse("socialBoard"))
-        else:
-            form = UserCreationForm()
-            return render(request,
-            "registration/register.html",
-            { "form": form })
+            print("os valid")
+            new_user = form.save()
+            auth_login(request,new_user)
+            posts = Post.objects.all()
+            context = {'posts': posts}
+            return render(request, "socialBoard/index.html", context)
+            # return redirect(request, 'socialBoard.html')
+    else:
+        form = UserCreationForm()
+    return render(request, "registration/register.html", {"form": form})
 
 
       
