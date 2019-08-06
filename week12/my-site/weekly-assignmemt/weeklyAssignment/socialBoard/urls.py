@@ -8,6 +8,6 @@ urlpatterns = [
     url(r'^login/$', login, name='login'),
     url(r'^logout/$', logout,kwargs={'next_page': '/'}, name='logout'),
     url(r'^register/$', views.register, name='register'),
-     url(r'^post/', TemplateView.as_view(template_name='new_post.html'),
-                      name='new_post'),
+    url(r'^post/',views.new_post_form, name='new_post' )
+
 ]

@@ -7,9 +7,11 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.views.decorators.csrf import csrf_protect
+from .forms import PostForm
 def index(request):
     context = {"posts": get_posts()}
-    return render(request,'socialBoard',context)
+    return render(request,'socialBoard/index.html',context)
 
 def get_posts():
     return Post.objects.all()
@@ -26,7 +28,7 @@ def login(request):
     if user is not None:
         if user.is_active:
             auth_login(request,user)
-            return redirect(request, 'socialBoard.html')
+            return redirect(request, 'index.html')
         else:
             pass
     else:        
@@ -34,17 +36,15 @@ def login(request):
 
 
 def register(request):
-    print("in register")
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            print("os valid")
             new_user = form.save()
             auth_login(request,new_user)
             posts = Post.objects.all()
             context = {'posts': posts}
             return render(request, "socialBoard/index.html", context)
-            # return redirect(request, 'socialBoard.html')
+            
     else:
         form = UserCreationForm()
     return render(request, "registration/register.html", {"form": form})
@@ -56,3 +56,17 @@ def register(request):
 def logout(request):
     logout(request)
     return redirect('base.html')
+
+
+@csrf_protect
+def new_post_form(request):
+    print("in new post")
+    if request.method =="POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            Post.objects.create(**form.cleaned_data)
+            return HttpResponse("<h1>New Post created</h1>")
+    else:
+        form = PostForm()
+    context = {"form":form}
+    return render(request, "new_post.html", context)    
