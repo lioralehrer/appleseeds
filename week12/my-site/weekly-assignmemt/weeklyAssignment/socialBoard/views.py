@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from . models import Post
 from django.http import HttpResponse
-import datetime
+from datetime import datetime
 from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -60,7 +60,6 @@ def logout(request):
 
 @csrf_protect
 def new_post_form(request):
-    print("in new post")
     if request.method =="POST":
         form = PostForm(request.POST)
         if form.is_valid():
@@ -70,3 +69,7 @@ def new_post_form(request):
         form = PostForm()
     context = {"form":form}
     return render(request, "new_post.html", context)    
+
+
+
+
