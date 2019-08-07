@@ -64,7 +64,10 @@ def new_post_form(request):
         form = PostForm(request.POST)
         if form.is_valid():
             Post.objects.create(**form.cleaned_data)
-            return HttpResponse("<h1>New Post created</h1>")
+            posts = Post.objects.all()
+            context = {'posts': posts}
+            return render(request, "socialBoard/index.html", context)
+            # return HttpResponse("<h1>New Post created</h1>")
     else:
         form = PostForm()
     context = {"form":form}
