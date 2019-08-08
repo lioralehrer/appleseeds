@@ -9,6 +9,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_protect
 from .forms import PostForm
+from django.contrib.auth.decorators import login_required
+
+@login_required
 def index(request):
     context = {"posts": get_posts()}
     return render(request,'socialBoard/index.html',context)
@@ -17,9 +20,6 @@ def get_posts():
     return Post.objects.all()
  
    
-# @login_required
-# def some_view(request):
-#     pass
 
 def login(request):
     username = request.POST.get('username')

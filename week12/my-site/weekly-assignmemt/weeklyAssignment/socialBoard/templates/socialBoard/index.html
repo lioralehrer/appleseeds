@@ -11,8 +11,8 @@
 </head>
 <body data-gr-c-s-loaded="true">
     <div>
-        <p id="hellouser">Hello {{user.name}} !</p>
-        <a class="btn" id="logoutbtn" href="/logout">Logout</a>
+        <p id="hellouser">Hello {{user}} !</p>
+        <a class="btn" id="logoutbtn" href="{% url 'logout'%}">Logout</a>
     </div>
 
     <div class="board">
@@ -22,7 +22,7 @@
             {% for p in posts %}
             <fieldset class="post_div center-block">
                 <legend>
-                    <p class="pubdate">{{p.pub_date}}</p>
+                    <p class="pubdate">{{p.pub_date | date:"F d, Y "}}</p>
                 </legend>
                 <a class="delete_post" id="{{p.id}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
                 <p class="posttitle">{{p.title}}</p>
