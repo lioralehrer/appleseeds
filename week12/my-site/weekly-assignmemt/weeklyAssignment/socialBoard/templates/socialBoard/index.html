@@ -1,42 +1,58 @@
 {%  load static %}
-<!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="gr__cryptic-plains-74549_herokuapp_com fa-events-icons-ready">
 <head>
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'socialBoard/css/style.css' %}">
-    <title>Social Board</title>
+    <title>Billboard</title>
+    <link href="https://use.fontawesome.com/082397c0ed.css" media="all" rel="stylesheet">
 </head>
-
-<body>
-    <div class="container">
-        <p class="head">BILLBOARD</p>
-        {% if posts %}
-        <ul>
-            {% for p in posts %}
-            <li>
-                <div id="post">
-                    <div id="post-title">{{p.title}}
-                        <p id="post-content">{{p.content}}</p>
-                        <p id="post-author">{{p.author}}</p>
-                    </div>
-                   
-                </div>
-
-            </li>
-        </ul>
-        {% endfor %}
-        <div id="add-post"><button id="btn-add-post">
-                <a href="{% url 'new_post' %}">+</a></button></div>
-        {% else %}
-        <p>There are no posts yet...</p>
-        {% endif%}
+<body data-gr-c-s-loaded="true">
+    <div>
+        <p id="hellouser">Hello {{user.name}} !</p>
+        <a class="btn" id="logoutbtn" href="/logout">Logout</a>
     </div>
 
-
-    <script src="{% static 'socialBoard/js/socialBoard.js' %}"></script>
+    <div class="board">
+        <h1 id="maintitle">Billboard</h1>
+        <div id="row">
+            {% if posts %}
+            {% for p in posts %}
+            <fieldset class="post_div center-block">
+                <legend>
+                    <p class="pubdate">{{p.pub_date}}</p>
+                </legend>
+                <a class="delete_post" id="{{p.id}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                <p class="posttitle">{{p.title}}</p>
+                <p class="postmsg">{{p.content}}/p>
+                    <p class="postauthor">{{p.author}}</p>
+                    <button class="showcomments btn " id="showcomment_{{p.id}}">Show Comments</button>
+                    <button class="addcomment btn" id="add_{{p.id}}">Add Comment</button>
+                    <div class="comments" id="commentbox_{{p.id}}" style="display: none;">
+                    </div>
+                    <div class="center-block newcommentbox" style="display: none;">
+                        <br>
+                        <textarea class="form-control" rows="2" id="newcoomenttext_{{p.id}}"
+                            placeholder="Your comment here.."></textarea>
+                        <input type="text" class="form-control" id="newcommentauthor_{{p.id}}" placeholder="Your name">
+                        <i class="fa fa-times clostcomment" id="{{p.id}}" aria-hidden="true"></i>
+                        <i class="fa fa-check confirmcommentbtn" id="{{p.id}}" aria-hidden="true"></i>
+                    </div>
+            </fieldset>
+            {% endfor %}
+            {% block new_post %}{% endblock %}
+            <div id="add-post"><button id="btn-add-post">
+                    <a href="{% url 'new_post' %}">+</a></button></div>
+            {% else %}
+            <p>There are no posts yet...</p>
+            {% endif%}
+        </div>
+    </div>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/js/082397c0ed.js"></script>
+    <script src="/static/js/javascript.js"></script>
 </body>
-
 </html>
