@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="coder.css">
+    <title>CoderByte</title>
+</head>
+<body>
+        <input type="text" name="change" id="change" placeholder="What do you want to change?"/>
+       <button onclick="changeTheLetters()"> Change</button>
+        <p id= "aa">
+               
+        </p>
+        <script>
+
+   
+        function changeTheLetters(){
+            let text = document.getElementById("change").value;
+            document.getElementById("change").innerHTML= " ";
+            document.getElementById("aa").innerHTML= letterChanges(text);
+            
+        }
+        function letterChanges(str) { 
+
+str = (str !== null ? str.toLowerCase() : '');
+let newStr = '';
+let vauls = ['a','e','i','o','u'];
+let changed = false;
+let nst='';
+for (let i = 0 ; i< str.length; i++){
+
+    if(str[i].match(/[a-z]/i)) 
+    {
+      newStr += (str[i]=='z'?'a' : String.fromCharCode(str[i].charCodeAt(0)+1));
+    }
+    else{
+      newStr += str[i];
+    }
+
+     
+  
+ }
+ for (let i = 0; i<str.length; i++){
+   for (let j = 0 ; j<vauls.length; j++){
+     if (newStr[i] === vauls[j]){
+       nst += newStr[i].toUpperCase();
+       changed = true;
+     }
+   }
+   if (!changed){
+     nst += newStr[i];
+   }
+   changed = false;
+ }
+
+    
+  return nst; 
+
+}
+  
+        </script>
+  
+</body>
+</html>
